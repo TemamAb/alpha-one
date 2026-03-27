@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaMark - System Settings</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .sidebar { background-color: #1e293b; border-right: 1px solid #334155; height: 100vh; position: fixed; width: 250px; }
+        .main-content { margin-left: 250px; padding: 2rem; }
+        .nav-item { padding: 1rem; color: #94a3b8; transition: all 0.2s; display: flex; align-items: center; gap: 10px; text-decoration: none;}
+        .nav-item:hover, .nav-item.active { background-color: #334155; color: #fff; border-right: 3px solid #3b82f6; }
+        .card { background-color: #1e293b; border-radius: 0.5rem; padding: 1.5rem; border: 1px solid #334155; margin-bottom: 1.5rem; }
+        .btn-primary { background-color: #3b82f6; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; border: none; cursor: pointer; transition: bg 0.2s; }
+        .btn-primary:hover { background-color: #2563eb; }
+        .upload-area { border: 2px dashed #475569; border-radius: 0.5rem; padding: 2rem; text-align: center; cursor: pointer; transition: border 0.2s; }
+        .upload-area:hover { border-color: #3b82f6; background-color: rgba(59, 130, 246, 0.05); }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <div class="p-4 border-b border-gray-700">
+        <h1 class="text-xl font-bold text-blue-500"><i class="fas fa-bolt mr-2"></i>AlphaMark</h1>
+        <p class="text-xs text-gray-500 mt-1">Enterprise HFT System</p>
+    </div>
+    <nav class="mt-4">
+        <a href="/" class="nav-item">
+            <i class="fas fa-chart-line"></i> Dashboard
+        </a>
+        <a href="/settings" class="nav-item active">
+            <i class="fas fa-cog"></i> Settings
+        </a>
+    </nav>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h2 class="text-2xl font-bold mb-6">System Configuration</h2>
+
+    <!-- Env Upload Panel -->
+    <div class="card">
+        <h3 class="text-lg font-semibold mb-2"><i class="fas fa-file-code mr-2 text-yellow-500"></i>Environment Override</h3>
+        <p class="text-gray-400 mb-4 text-sm">Upload a local <code>.env</code> file to instantly override live trading parameters (Slippage, Liquidity, Keys) without restarting the engine.</p>
+        
+        <div class="upload-area" id="drop-zone" onclick="document.getElementById('env-input').click()">
+            <i class="fas fa-cloud-upload-alt text-4xl text-gray-500 mb-2"></i>
+            <p class="font-medium">Click to upload .env</p>
+            <p class="text-xs text-gray-500">or drag and drop file here</p>
+            <input type="file" id="env-input" style="display: none;" accept=".env,text/plain">
+        </div>
+        
+        <div id="file-info" class="mt-4 hidden p-3 bg-gray-800 rounded flex justify-between items-center">
+            <span id="filename" class="text-sm font-mono text-green-400"></span>
+            <button onclick="uploadEnv()" class="btn-primary text-sm">Apply Configuration</button>
+        </div>
+        
+        <div id="status-msg" class="mt-2 text-sm"></div>
+    </div>
+
+</div>
+
+<script>
+    const fileInput = document.getElementById('env-input');
+    const fileInfo = document.getElementById('file-info');
+    const fileNameDisplay = document.getElementById('filename');
+    const statusMsg = document.getElementById('status-msg');
+    let selectedFile = null;
+
+    fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length > 0) {
+            selectedFile = e.target.files[0];
+            fileNameDisplay.innerText = selectedFile.name;
+            fileInfo.classList.remove('hidden');
+            statusMsg.innerText = '';
+        }
+    });
+
+    async function uploadEnv() {
+        if (!selectedFile) return;
+        
+        const reader = new FileReader();
+        reader.onload = async function(e) {
+            const content = e.target.result;
+            
+            statusMsg.className = 'mt-2 text-sm text-blue-400';
+            statusMsg.innerText = 'Uploading and syncing...';
+
+            try {
+                const response = await fetch('/api/settings/upload-env', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain' },
+                    body: content
+                });
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    statusMsg.className = 'mt-2 text-sm text-green-500';
+                    statusMsg.innerHTML = '<i class="fas fa-check-circle"></i> ' + result.message;
+                } else {
+                    statusMsg.className = 'mt-2 text-sm text-red-500';
+                    statusMsg.innerText = 'Error: ' + result.message;
+                }
+            } catch (err) {
+                statusMsg.className = 'mt-2 text-sm text-red-500';
+                statusMsg.innerText = 'Network Error';
+            }
+        };
+        reader.readAsText(selectedFile);
+    }
+</script>
+</body>
+</html>

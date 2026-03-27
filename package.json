@@ -1,0 +1,27 @@
+{
+  "name": "alphamarka",
+  "version": "1.0.0",
+  "description": "![AlphaMark](https://img.shields.io/badge/AlphaMark-v1.0.0-blue) ![Python](https://img.shields.io/badge/Python-3.11+-green) ![Node.js](https://img.shields.io/badge/Node.js-18+-green) ![Solidity](https://img.shields.io/badge/Solidity-0.8.10+-orange) ![License](https://img.shields.io/badge/License-MIT-yellow)",
+  "main": "deploy_gasless.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TemamAb/alpha.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TemamAb/alpha/issues"
+  },
+  "homepage": "https://github.com/TemamAb/alpha#readme",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "redis": "^5.11.0",
+    "ws": "^8.20.0"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "alphamark-smart-contracts",
+  "version": "1.0.0",
+  "description": "AlphaMark FlashLoan contracts",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:localeth": "hardhat run scripts/deploy.js --network localethereum",
+    "deploy:localpoly": "hardhat run scripts/deploy.js --network localpolygon",
+    "deploy:localbsc": "hardhat run scripts/deploy.js --network localbsc",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:amoy": "hardhat run scripts/deploy.js --network amoy",
+    "deploy:bsctest": "hardhat run scripts/deploy.js --network bscTestnet",
+    "deploy:testnets": "npm run deploy:sepolia && npm run deploy:amoy && npm run deploy:bsctest",
+    "deploy:ethereum": "hardhat run scripts/deploy.js --network ethereum",
+    "deploy:polygon": "hardhat run scripts/deploy.js --network polygon",
+    "deploy:bsc": "hardhat run scripts/deploy.js --network bsc",
+    "deploy:mainnets": "npm run deploy:ethereum && npm run deploy:polygon && npm run deploy:bsc",
+    "test": "hardhat test"
+  },
+  "devDependencies": {
+    "@aave/core-v3": "^1.19.3",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.2",
+    "@nomicfoundation/hardhat-ethers": "^3.1.3",
+    "@nomicfoundation/hardhat-network-helpers": "^1.1.2",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.1.3",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^25.5.0",
+    "chai": "^4.5.0",
+    "ethers": "^6.16.0",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.17",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0"
+  }
+}

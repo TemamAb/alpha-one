@@ -1,0 +1,32 @@
+{
+  "name": "alphamark-dashboard",
+  "version": "1.0.0",
+  "description": "Real-time monitoring dashboard for AlphaMark Arbitrage Bot",
+  "main": "server-dashboard.js",
+  "scripts": {
+    "start": "node server-dashboard.js",
+    "dev": "node server-dashboard.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "redis": "^4.7.0",
+    "ws": "^8.18.0",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5",
+    "helmet": "^7.1.0",
+    "compression": "^1.7.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "arbitrage",
+    "flash-loan",
+    "defi",
+    "trading",
+    "monitoring"
+  ],
+  "author": "AlphaMark Team",
+  "license": "MIT"
+}

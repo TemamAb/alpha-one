@@ -1,0 +1,102 @@
+services:
+  - type: web
+    name: alphamark-dashboard
+    runtime: docker
+    dockerfilePath: frontend/Dockerfile
+    dockerContext: .
+    plan: starter
+    autoDeploy: false
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "3000"
+      - key: NODE_ENV
+        value: production
+      - key: PAPER_TRADING_MODE
+        value: "false"
+      - key: REDIS_URL
+        sync: false
+      - key: REDIS_URL_EXTERNAL
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: PRIVATE_KEY
+        sync: false
+      - key: WALLET_ADDRESS
+        sync: false
+      - key: DEPLOYER_ADDRESS
+        sync: false
+      - key: PIMLICO_API_KEY
+        sync: false
+      - key: FLASHLOAN_CONTRACT_ADDRESS
+        sync: false
+
+  - type: worker
+    name: alphamark-bot
+    runtime: docker
+    dockerfilePath: Dockerfile.bot
+    dockerContext: .
+    plan: starter
+    autoDeploy: false
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: PAPER_TRADING_MODE
+        value: "false"
+      - key: REDIS_URL
+        sync: false
+      - key: DASHBOARD_HOSTPORT
+        fromService:
+          type: web
+          name: alphamark-dashboard
+          property: hostport
+      - key: PRIVATE_KEY
+        sync: false
+      - key: WALLET_ADDRESS
+        sync: false
+      - key: DEPLOYER_ADDRESS
+        sync: false
+      - key: PIMLICO_API_KEY
+        sync: false
+      - key: FLASHLOAN_CONTRACT_ADDRESS
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ETH_RPC_URL
+        sync: false
+      - key: POLYGON_RPC_URL
+        sync: false
+      - key: BSC_RPC_URL
+        sync: false
+      - key: ARBITRUM_RPC_URL
+        sync: false
+      - key: OPTIMISM_RPC_URL
+        sync: false
+      - key: BASE_RPC_URL
+        sync: false
+      - key: AVALANCHE_RPC_URL
+        sync: false
+      - key: LINEA_RPC_URL
+        sync: false
+      - key: SCROLL_RPC_URL
+        sync: false
+      - key: ZORA_RPC_URL
+        sync: false
+      - key: GNOSIS_RPC_URL
+        sync: false
+      - key: FANTOM_RPC_URL
+        sync: false
+      - key: CELO_RPC_URL
+        sync: false
+      - key: MANTLE_RPC_URL
+        sync: false
+      - key: BERACHAIN_RPC_URL
+        sync: false
+      - key: MODE_RPC_URL
+        sync: false
+      - key: BLAST_RPC_URL
+        sync: false
+      - key: SEI_RPC_URL
+        sync: false
+
+

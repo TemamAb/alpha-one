@@ -1,0 +1,28 @@
+[
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "name": "tokens",
+        "type": "address[]"
+      },
+      {
+        "name": "amounts",
+        "type": "uint256[]"
+      },
+      {
+        "name": "userData",
+        "type": "bytes"
+      }
+    ],
+    "name": "startFlashLoan",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

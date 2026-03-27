@@ -1,0 +1,27 @@
+{
+  "target_date": "2026-03-26",
+  "current_integrated_count": 20,
+  "target_integrated_count": 20,
+  "chains": [
+    { "chain": "ethereum", "status": "integrated", "tier": 1, "notes": "Production integrated" },
+    { "chain": "arbitrum", "status": "integrated", "tier": 1, "notes": "Production integrated; factories partially degraded" },
+    { "chain": "base", "status": "integrated", "tier": 1, "notes": "Production integrated; one factory marked bad" },
+    { "chain": "optimism", "status": "integrated", "tier": 1, "notes": "Production integrated; router fallback active" },
+    { "chain": "polygon", "status": "integrated", "tier": 1, "notes": "Production integrated" },
+    { "chain": "bsc", "status": "integrated", "tier": 1, "notes": "Production integrated" },
+    { "chain": "avalanche", "status": "integrated", "tier": 1, "notes": "Production integrated" },
+    { "chain": "linea", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "scroll", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "zksync_era", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "blast", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "manta_pacific", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "mode", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "zora", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "gnosis", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "fantom", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "celo", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "mantle", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "berachain", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" },
+    { "chain": "sei_evm", "status": "integrated", "tier": 2, "notes": "Production active via RPC and monitor-first chain config; DEX/factory validation still pending" }
+  ]
+}

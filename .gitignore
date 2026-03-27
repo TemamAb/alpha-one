@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+__pycache__/
+.env
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.production
+.env.*.local
+*.env.md
+RENDER_ENV_CONFIG.txt
+*.pem
+*.key
+*.vault
+secrets/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Smart contract cache
+smart_contracts/cache/
+smart_contracts/artifacts/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Node
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+venv/
+env/
+.venv/

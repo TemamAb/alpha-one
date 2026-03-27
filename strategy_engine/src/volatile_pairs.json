@@ -1,0 +1,17 @@
+{
+  "top_pairs": [
+    {"base": "WETH", "quote": "USDC", "priority": 1},
+    {"base": "WBTC", "quote": "USDC", "priority": 2},
+    {"base": "LINK", "quote": "USDC", "priority": 3},
+    {"base": "UNI", "quote": "USDC", "priority": 4},
+    {"base": "AAVE", "quote": "USDC", "priority": 5},
+    {"base": "WETH", "quote": "USDT", "priority": 6},
+    {"base": "WBTC", "quote": "WETH", "priority": 7},
+    {"base": "USDC", "quote": "USDT", "priority": 8},
+    {"base": "CRV", "quote": "USDC", "priority": 9},
+    {"base": "COMP", "quote": "USDC", "priority": 10}
+  ],
+  "min_trade_size_usd": 10000,
+  "target_profit_usd": 50
+}
+

@@ -1,0 +1,52 @@
+{
+  "ethereum": {
+    "rpc": "https://rpc.ankr.io/eth",
+    "chain_id": 1,
+    "router_dex": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+    "weth_address": "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    "dexes": {
+      "uniswap": "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D",
+      "sushiswap": "0xd9e1cE17f2641f24aE83637ab66a2cca9C378B9F"
+    }
+  },
+  "polygon": {
+    "rpc": "https://polygon-rpc.com",
+    "chain_id": 137,
+    "router_dex": "0xa5E0829CaCEd8fFDD4De3c43696c57F7d7A678ff",
+    "weth_address": "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
+    "dexes": {
+      "quickswap": "0xa5E0829CaCEd8fFDD4De3c43696c57F7d7A678ff",
+      "sushiswap": "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506"
+    }
+  },
+  "arbitrum": {
+    "rpc": "https://arb1.arbitrum.io/rpc",
+    "chain_id": 42161,
+    "router_dex": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+    "weth_address": "0x82aF49447D8a07e3bd95BD0d56f35241523fBab1",
+    "dexes": {
+      "uniswap": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+      "sushiswap": "0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506"
+    }
+  },
+  "optimism": {
+    "rpc": "https://mainnet.optimism.io",
+    "chain_id": 10,
+    "router_dex": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+    "weth_address": "0x4200000000000000000000000000000000000006",
+    "dexes": {
+      "uniswap": "0xE592427A0AEce92De3Edee1F18E0157C05861564",
+      "sushiswap": "0x2F10fF8D63d5D8bb48C5DaE7D3B1C5Db5a6C80dE"
+    }
+  },
+  "bsc": {
+    "rpc": "https://bsc-dataseed.binance.org",
+    "chain_id": 56,
+    "router_dex": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+    "weth_address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    "dexes": {
+      "pancakeswap": "0x10ED43C718714eb63d5aA57B78B54704E256024E",
+      "biswap": "0x3fC13D266e01AF74a7E8e6a34D5B0f5a5fAaCa5b"
+    }
+  }
+}
